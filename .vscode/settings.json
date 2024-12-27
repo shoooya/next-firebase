@@ -1,0 +1,48 @@
+{
+    // ワーキングディレクトリを設定
+    "eslint.workingDirectories": [
+      {
+        // ESLintが動作するディレクトリを指定
+        "directory": "./app",
+        // プロセスのカレントディレクトリを変更するかどうか
+        "changeProcessCWD": true
+      }
+    ],
+    // TypeScript SDKのパスを指定
+    "typescript.tsdk": "node_modules/typescript/lib",
+  
+    // ESLintがバリデーションを行うファイルタイプを指定
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    // デフォルトのフォーマッターをPrettierに設定
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // Prettierの設定ファイルがプロジェクトルートに存在する場合にのみ動作するように設定
+    "prettier.requireConfig": true,
+    // Prettierの設定ファイルのパスを指定
+    "prettier.configPath": ".prettierrc.json",
+    // 保存時に実行するコードアクションを設定
+    "editor.codeActionsOnSave": {
+      // 保存時に不足しているインポートを追加
+      "source.addMissingImports": "explicit",
+      // 保存時にESLintの自動修正を実行
+      "source.fixAll.eslint": "explicit"
+    },
+    // カスタムラベルを有効にする設定
+    "workbench.editor.customLabels.enabled": true,
+    // 特定のファイルパターンに対するカスタムラベルのパターンを設定
+    "workbench.editor.customLabels.patterns": {
+      // `page.tsx` ファイルに対するカスタムラベル
+      "**/page.tsx": "${dirname} - Page",
+      // `layout.tsx` ファイルに対するカスタムラベル
+      "**/layout.tsx": "${dirname} - Layout",
+      // スタイルモジュールに対するカスタムラベル
+      "**/styles.module.scss": "${dirname} - Style",
+      // APIルートに対するカスタムラベル
+      "**/api/**/route.ts": "${dirname} - API"
+    }
+  }
+  
